@@ -896,7 +896,7 @@ df_pair = df[cols_pair].rename(columns={
 })
 pp = sns.pairplot(df_pair, diag_kind='kde', plot_kws={'alpha': 0.4})
 pp.fig.suptitle('Visão Geral: População, Renda e Frota', y=1.02, fontsize=16, fontweight='bold')
-pp.savefig('visao_geral.png', dpi=150, bbox_inches='tight')
+pp.savefig('Imagens_graficos/visao_geral.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 #%%
@@ -905,7 +905,7 @@ plt.close()
 print("Gerando gráfico do Abismo Social (IDHM)...")
 
 # Filtrando cidades válidas
-df_idh_valid = df_ml.dropna(subset=['IDHM', 'CITY', 'STATE']).copy()
+df_idh_valid = df.dropna(subset=['IDHM', 'CITY', 'STATE']).copy()
 
 # Pegando as 10 melhores e as 10 piores
 top_10_idh = df_idh_valid.nlargest(10, 'IDHM')
